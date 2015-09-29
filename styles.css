@@ -9,3 +9,13 @@ div {
     background-color: chartreuse;
     color: beige;
 }
+
+.pancy {
+    margin: 45px;   
+}
+
+/*Id selector*/
+#test {
+    max-width: 300px;   
+    margin: 0 auto;
+}
