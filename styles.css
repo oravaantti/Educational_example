@@ -19,3 +19,33 @@ div {
     max-width: 300px;   
     margin: 0 auto;
 }
+/*
+#dataTable tr:nth-child(odd) {
+    background-color: #EEF;
+}
+
+#dataTable tr:nth-child(even) {
+    background-color: #DDF;
+}
+
+#dataTable tr:hover {
+    background-color: #CCF;
+}
+*/
+
+.tableBorder th,  .tableBorder td, .tableBorder {
+    border: 1px solid #99F;
+    border-collapse: collapse;
+}
+
+.young {
+    background-color: green;
+}
+
+.middle-age {
+    background-color: lightgray;
+}
+
+.old {
+    background-color: gray;
+}
