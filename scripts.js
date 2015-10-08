@@ -20,9 +20,7 @@ $(function() {
         
         var length = data.rows.length;
 
-
-        for(var i = 0 ; i < data.rows.length ; i++) {
-
+        for(var i = 0 ; i < length ; i++) {
             var classToSet;
 
             if(data.rows[i].age < 30) classToSet = "young";
