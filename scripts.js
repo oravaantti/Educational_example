@@ -13,13 +13,19 @@ $(function() {
       dataType: "jsonp",
       jsonp: "jsonp",
       beforeSend: function() { console.log("START"); },
-      //success: function(data,text) { console.log(data); console.log(text); },
-      //error: function(XHR,text,error) { console.log(XHR); console.log(text); console.log(error); }
     }).done(function(data) {
         console.log("DONE");
         
         var length = data.rows.length;
 
+        // Add headers to table
+        $("<tr></tr>").appendTo("#dataTable");
+        
+        for(var key in data.rows[0])
+            if(key != "_id")
+                $("<th></th>").text(key).appendTo("#dataTable>tbody>tr:last-child");
+        
+        // Add data to table
         for(var i = 0 ; i < length ; i++) {
             var classToSet;
 
@@ -29,10 +35,9 @@ $(function() {
 
             $("<tr></tr>").appendTo("#dataTable").addClass(classToSet);
 
-            for(var key in data.rows[i]) {
+            for(var key in data.rows[i])
                 if(key != "_id")
-                $("<td></td>").text(data.rows[i][key]).appendTo("#dataTable>tbody>tr:last-child");
-            }
+                    $("<td></td>").text(data.rows[i][key]).appendTo("#dataTable>tbody>tr:last-child");
         }
 		
         /*
@@ -64,25 +69,3 @@ $(function() {
         */
     });
 });
-
-/*
-
-$(document).ready(ready_yeah);
-
-function ready_yeah() {
-
-}
-
-*/
-
-/*
-Browser api for DOM ready event
-window.onload = function(event) {
-    console.log(event);
-    
-    var temp = document.getElementById("my_title");
-    temp.innerHTML = "Changed from JS";
-    
-    my_title.innerHTML = "Just the same";
-}
-*/
