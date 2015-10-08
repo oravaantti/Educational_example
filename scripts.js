@@ -34,7 +34,7 @@ $(function() {
                 $("<td></td>").text(data.rows[i][key]).appendTo("#dataTable>tbody>tr:last-child");
             }
         }
-        
+		
         /*
         for(var i = 0 ; i < length ; i++) {
             $("#dataTable").append(
@@ -44,8 +44,6 @@ $(function() {
             );
         }
         */
-        
-        
         /*
         $.each(data.rows, function(i, item) {
             var classToAdd;
