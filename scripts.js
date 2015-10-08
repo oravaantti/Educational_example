@@ -19,14 +19,17 @@ $(function() {
         console.log("DONE");
         
         var length = data.rows.length;
-        /*
-        $(data.rows).each(function(i, elem) {
-            console.log(i);   
-            console.log(elem);
-            
-            $("#dataTable").appendTo();
-        });
-        */
+
+		var classToSet;
+		
+		if(data[i].age < 30) classToSet = "young";
+		else if(data[i].age > 50) classToSet = "old";
+		else classToSet = "middle-age";
+		
+		$("<tr></tr>").appendTo("#dataTable").addClass(classToSet);
+		
+		for(var key in data[i]) $("<td></td>").text(data[i][key]).appendTo("#dataTable>tbody>tr:last-child");
+		
         /*
         for(var i = 0 ; i < length ; i++) {
             $("#dataTable").append(
@@ -36,8 +39,6 @@ $(function() {
             );
         }
         */
-        
-        
         
         $.each(data.rows, function(i, item) {
             var classToAdd;
